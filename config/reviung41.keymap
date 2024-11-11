@@ -13,12 +13,13 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
-            bindings = <&none>, <&none>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
+            require-prior-idle-ms = <200>;
         };
 
         hs: homerow_mods_slow {
@@ -30,6 +31,7 @@
             tapping-term-ms = <300>;
             quick-tap-ms = <300>;
             flavor = "tap-preferred";
+            require-prior-idle-ms = <300>;
         };
     };
 
@@ -44,10 +46,10 @@
             //                         | ALT | LWR | SPC | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E      &kp R      &kp T             &kp Y  &kp U            &kp I         &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D      &kp F      &kp G             &kp H  &kp J            &kp K         &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C      &kp V      &kp B             &kp N  &kp M            &kp COMMA     &kp DOT  &kp FSLH  &mt RSHFT RET
-                         &lt 1 TAB  &kp ENTER         &kp SPACE         &lt 2 BACKSPACE  &lt 3 ESCAPE
+&none           &kp Q       &kp W         &kp E         &kp R        &kp T             &kp Y  &kp U            &kp I         &kp O            &kp P          &kp LBKT
+&kp LEFT_SHIFT  &hm LCMD A  &hm LSHIFT S  &hm LSHIFT D  &hm LCTRL F  &kp G             &kp H  &hm RCTRL J      &hm RSHFT K   &hm RIGHT_ALT L  &hm RGUI SEMI  &kp SQT
+&kp LCTRL       &kp Z       &kp X         &kp C         &kp V        &kp B             &kp N  &kp M            &kp COMMA     &kp DOT          &kp FSLH       &none
+                                          &lt 1 TAB     &kp ENTER           &kp SPACE         &lt 2 BACKSPACE  &lt 3 ESCAPE
             >;
         };
 
