@@ -51,8 +51,8 @@
 
         sym {
             bindings = <
-&none  &kp SE_DQT      &kp SE_AT          &kp SE_EQUAL        &kp SE_AMPS                  &kp SE_BSLH  &kp SE_LPAR  &kp SE_RPAR &kp SE_PIPE          &kp SE_QMARK      &kp SE_PLUS           &none
-&none  &hs LGUI SE_SQT  &hm LALT SE_STAR  &hm LSHIFT SE_DLLR  &hm LCTRL SE_EXCL            &kp SE_TILDE  &kp SE_LBKT  &kp SE_RBKT &hm RSHIFT SE_EQUAL  &hm RALT SE_PIPE  &hm RGUI SE_MINUS     &kp SE_GRAVE
+&none  &kp SE_DQT       &kp SE_AT          &kp SE_EQUAL        &kp SE_AMPS                 &kp SE_BSLH   &kp SE_LPAR  &kp SE_RPAR &kp SE_PIPE          &kp SE_QMARK      &kp SE_PLUS           &none
+&none  &hm LGUI SE_SQT  &hm LALT SE_STAR  &hm LSHIFT SE_DLLR  &hm LCTRL SE_EXCL            &kp SE_TILDE  &kp SE_LBKT  &kp SE_RBKT &hm RSHIFT SE_EQUAL  &hm RALT SE_PIPE  &hm RGUI SE_MINUS     &kp SE_GRAVE
 &none  &kp SE_PRCNT     &kp SE_HASH       &kp SE_CARET        &kp SE_DLLR                  &kp SE_MINUS  &kp SE_LBRC  &kp SE_RBRC &kp SE_LT            &kp SE_GT         &kp SE_UNDER          &none
                         &kp SLASH         &kp SE_FSLH                          &kp SPACE                  &mo 4        &mo 3
             >;
