@@ -9,6 +9,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include "swe_keys.h"
 
+&lt {
+    quick-tap-ms = <200>
+}
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -17,22 +21,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <200>;
-        };
-
-        hs: homerow_mods_slow {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_SLOW";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <300>;
-            flavor = "tap-preferred";
-            require-prior-idle-ms = <300>;
         };
     };        
 
@@ -40,12 +32,6 @@
         compatible = "zmk,keymap";
 
         default {
-            // -------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |   BKSP    |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |    '      |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT(RET) |
-            //                         | ALT | LWR | SPC | RSE  | ALT |
-
             bindings = <
 &none           &kp Q       &kp W         &kp E         &kp R        &kp T             &kp Y  &kp U            &kp I         &kp O            &kp P          &kp LBKT
 &kp LEFT_SHIFT  &hm LCMD A  &hm LSHIFT S  &hm LSHIFT D  &hm LCTRL F  &kp G             &kp H  &hm RCTRL J      &hm RSHFT K   &hm RIGHT_ALT L  &hm RGUI SEMI  &kp SQT
@@ -55,56 +41,38 @@
         };
 
         num {
-            // ----------------------------------------------------------------------------
-            // |    |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL |
-            // |    |  -  |  =  |  [  |  ]  |  \  |   | F1  | F2  | F3  | F4  | F5  | F6  |
-            // |    | ESC | GUI | ALT | CAPS|  "  |   | F7  | F8  | F9  | F10 | F11 | F12 |
-            //                       |     | ADJ | BKSP |    |     |
-
             bindings = <
-&trans  &kp N1        &kp N2  &kp N3  &kp N4  &kp N5          &kp N6  &kp N7        &kp N8  &kp N9        &kp N0  &none
-&trans  &kp NUMBER_6  &kp N7  &kp N7  &kp N8  &kp N9          &none   &kp NUMBER_4  &kp N5  &kp NUMBER_6  &none   &none
-&trans  &none         &none   &none   &none   &none           &none   &kp N7        &kp N8  &kp N9        &none   &none
+&none  &kp N1        &kp N2  &kp N3  &kp N4  &kp N5          &kp N6  &kp N7        &kp N8  &kp N9        &kp N0  &none
+&none  &kp NUMBER_6  &kp N7  &kp N7  &kp N8  &kp N9          &none   &kp NUMBER_4  &kp N5  &kp NUMBER_6  &none   &none
+&none  &none         &none   &none   &none   &none           &none   &kp N7        &kp N8  &kp N9        &none   &none
                               &none   &none           &trans          &kp N0        &kp N0
             >;
         };
 
         sym {
-            // ------------------------------------------------------------------------------------
-            // |    |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      DEL    |
-            // |    |  _  |  +  |  {  |  }  | "|" |   | LFT | DWN |  UP | RGT |  `  |       ~     |
-            // |    | ESC | GUI | ALT | CAPS|  "  |   | HOME| END | PGUP| PGDN| PRSC| SHFT(SPACE) |
-            //                       |     |     | RET | ADJ |     |
-
             bindings = <
-&trans  &kp SE_DQT        &kp SE_AT         &kp SE_EQUAL      &kp SE_AMPS       &kp SE_BSLH             &kp SE_LPAR  &kp SE_RPAR         &kp SE_PIPE          &kp SE_QMARK      &kp SE_PLUS     &none
-            &none  &hs LGUI SE_SQT  &hm LALT SE_STAR  &hm LSHIFT SE_DLLR  &hm LCTRL SE_EXCL   &kp SE_TILDE                     &kp SE_LBKT      &kp SE_RBKT         &hm RSHIFT SE_EQUAL  &hm RALT SE_PIPE  &hm RGUI SE_MINUS     &kp SE_GRAVE
-            &none  &kp SE_PRCNT     &kp SE_HASH       &kp SE_CARET        &kp SE_DLLR         &kp SE_MINUS                     &kp SE_LBRC      &kp SE_RBRC         &kp SE_LT            &kp SE_GT         &kp SE_UNDER          &none
-                                           &kp SLASH            &kp SE_FSLH                           &kp RET              &mo 4       &mo 3
+&none  &kp SE_DQT      &kp SE_AT          &kp SE_EQUAL        &kp SE_AMPS                  &kp SE_BSLH  &kp SE_LPAR  &kp SE_RPAR &kp SE_PIPE          &kp SE_QMARK      &kp SE_PLUS           &none
+&none  &hs LGUI SE_SQT  &hm LALT SE_STAR  &hm LSHIFT SE_DLLR  &hm LCTRL SE_EXCL            &kp SE_TILDE  &kp SE_LBKT  &kp SE_RBKT &hm RSHIFT SE_EQUAL  &hm RALT SE_PIPE  &hm RGUI SE_MINUS     &kp SE_GRAVE
+&none  &kp SE_PRCNT     &kp SE_HASH       &kp SE_CARET        &kp SE_DLLR                  &kp SE_MINUS  &kp SE_LBRC  &kp SE_RBRC &kp SE_LT            &kp SE_GT         &kp SE_UNDER          &none
+                        &kp SLASH         &kp SE_FSLH                          &kp SPACE                  &mo 4        &mo 3
             >;
         };
 
         nav {
             bindings = <
-&none  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5              &kp HOME  &kp PG_UP   &kp UP    &kp PG_DN   &kp PRINTSCREEN  &none
-&none  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10             &kp END   &kp LEFT    &kp DOWN  &kp RIGHT   &none            &kp C_VOLUME_UP
-&none  &kp F11  &kp F12  &none   &none   &none               &none     &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp C_MUTE       &kp C_VOLUME_DOWN
-                         &trans  &trans           &kp SPACE            &mo 2       &trans
+&C_VOLUME_UP    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5             &kp PRINTSCREEN  &none              &kp HOME  &kp PG_UP   &kp UP    &kp PG_DN   
+&C_VOLUME_DOWN  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10            &none            &kp C_VOLUME_UP    &kp END   &kp LEFT    &kp DOWN  &kp RIGHT   
+&C_MUTE         &kp F11  &kp F12  &none   &none   &none              &kp C_MUTE       &kp C_VOLUME_DOWN  &none     &kp C_PREV  &kp C_PP  &kp C_NEXT  
+                                  &trans  &trans           &kp SPACE                  &mo 2       &trans
             >;
         };
 
         set {
-            // -----------------------------------------------------------------------------------------
-            // | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |    | RGB TOG |   |  BT1  | BT2 | BT3 | BT4 | BT5 | BT CLR |
-            // | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI- |    |         |   |       |     |     |     |     |        |
-            // |          |          |          |          |    |         |   | RESET |     |     |     |     |        |
-            //                                              |     |     |     |     |     |
-
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4           &none          &none         &none         &none         &none         &none
 &none  &bt BT_CLR    &none         &none         &none         &bt BT_CLR_ALL         &studio_unlock &none         &none         &none         &none         &none
-&none  &none         &none         &none         &none         &none                  &sys_reset    &none         &none         &none         &none         &none
-                                   &none         &none                         &none                &none         &none
+&none  &none         &none         &none         &none         &none                  &sys_reset     &none         &none         &none         &none         &none
+                                   &none         &none                         &none                 &none         &none
             >;
         };
     };
