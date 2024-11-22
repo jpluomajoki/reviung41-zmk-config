@@ -42,12 +42,12 @@
 
         num {
             bindings = <
-&none  &kp N1             &kp N2  &kp N3         &kp N4        &kp N5          &kp N6  &kp N7        &kp N8        &kp N9        &kp N0     &none
-&none  &hm LCMD NUMBER_6  &hm N7  &hm LSHIFT N7  &hm LCTRL N8  &kp N9          &none   &hm RCTRL N4  &hm RSHFT N5  &hm RALT N6   &kp RGUI   &none
-&none  &none              &none   &none          &none         &none           &none   &kp N7        &kp N8        &kp N9        &none      &none
-                              &none   &none           &trans          &kp N0        &kp N0
+&none  &kp N1       &kp N2  &kp N3         &kp N4        &kp N5          &kp N6  &kp N7        &kp N8        &kp N9        &kp N0     &none
+&none  &hm LCMD N6  &hm N7  &hm LSHIFT N7  &hm LCTRL N8  &kp N9          &none   &hm RCTRL N4  &hm RSHFT N5  &hm RALT N6   &kp RGUI   &none
+&none  &none        &none   &none          &none         &none           &none   &kp N7        &kp N8        &kp N9        &none      &none
+                            &none          &none                 &trans          &kp N0        &kp N0
             >;
-        };
+        };  
 
         sym {
             bindings = <
