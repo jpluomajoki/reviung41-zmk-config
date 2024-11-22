@@ -34,7 +34,7 @@
         default {
             bindings = <
 &none           &kp Q       &kp W         &kp E         &kp R        &kp T             &kp Y  &kp U                    &kp I         &kp O       &kp P          &kp LBKT
-&kp LEFT_SHIFT  &hm LCMD A  &hm ALT S     &hm LSHIFT D  &hm LCTRL F  &kp G             &kp H  &hm RIGHT_CONTROL J      &hm RSHFT K   &hm RALT L  &hm RGUI SEMI  &kp SQT
+&kp LEFT_SHIFT  &hm LCMD A  &hm ALT S     &hm LSHIFT D  &hm LCTRL F  &kp G              &kp H  &hm RIGHT_CONTROL J      &hm RSHFT K   &hm RALT L  &hm RGUI SEMI  &kp SQT
 &kp LCTRL       &kp Z       &kp X         &kp C         &kp V        &kp B             &kp N  &kp M                    &kp COMMA     &kp DOT     &kp FSLH       &none
                                           &lt 1 TAB     &kp ENTER           &kp SPACE         &lt 2 BACKSPACE          &lt 3 ESCAPE
             >;
